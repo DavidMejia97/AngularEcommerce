@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ControlesRoutingModule } from './controles-routing.module';
 import { ControlesComponent } from './controles.component';
+import { ButtonsModule } from '@app/shared';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ControlesComponent } from './controles.component';
   ],
   imports: [
     CommonModule,
-    ControlesRoutingModule
+    ControlesRoutingModule,
+    ButtonsModule
   ]
 })
 export class ControlesModule { }
