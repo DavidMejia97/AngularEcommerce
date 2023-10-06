@@ -15,7 +15,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 })
 export class InputComponent implements OnInit , ControlValueAccessor {
 
-  @Input() placeholder : string = '';
+  @Input() placeholder : string ="";
   @Output() changed = new EventEmitter<string>()
 
   value: string ='';
@@ -41,6 +41,20 @@ export class InputComponent implements OnInit , ControlValueAccessor {
   }
   setDisabledState(isDisabled: boolean): void {
     this.isDisabled = isDisabled;
+  }
+
+  onKeyup(event: Event){
+    const{target} = event;
+    this.value = (target as HTMLInputElement).value;
+    this.propagateChange(this.value);
+    this.changed.emit(this.value);
+
+
+  }
+
+  onBlur(): void{
+
+    this.propagateChange();
   }
 
 }

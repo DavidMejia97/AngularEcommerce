@@ -1,2 +1,16 @@
-<p>shared works!</p>
-<app-button >Boton de prueba</app-button>
+<h2>Formularios de Angular</h2>
+
+<form [formGroup]="form" novalidate autocomplete="off"  (ngSubmit)="onSubmit()">
+  <app-button (click)="organizarElemento()">Organizar</app-button>
+  <app-button (click)="onPatchValue()">Agregar Texto</app-button>
+  <br/><br/>
+  <app-form-field label="Input Jonathan"  [required]="true"  [control]="form.controls.input" [isInLine]="isInLine" [patternError]="regexErrors.number">
+    <app-input formControlName="input"></app-input>
+  </app-form-field>
+
+  <app-form-field label="password" [required]="true" [control]="form.controls.password" [isInLine]="isInLine">
+    <app-password formControlName="password"></app-password>
+
+  </app-form-field>
+
+</form>
