@@ -56,7 +56,6 @@
               "src/styles.scss"
             ],
             "scripts": []
-              
           },
           "configurations": {
             "dev": {
@@ -158,6 +157,5 @@
       }
     }
   },
-
   "defaultProject": "ecommerce-angular-app"
 }
