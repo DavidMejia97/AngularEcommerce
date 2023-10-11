@@ -13,4 +13,27 @@
 
   </app-form-field>
 
+  <app-form-field label="select" [required]="true" [control]="form.controls.select" [isInLine]="isInLine">
+    <app-select formControlName="select" [items]="items"></app-select>
+
+  </app-form-field>
+
+  <app-form-field label="checkboxes" [required]="true" [control]="form.controls.checkboxes" [isInLine]="isInLine">
+    <app-checkboxes formControlName="checkboxes" [items]="items"></app-checkboxes>
+
+  </app-form-field>
+
+  <app-form-field label="radios" [required]="true" [control]="form.controls.radios" [isInLine]="isInLine">
+    <app-radios formControlName="radios" [items]="items"></app-radios>
+
+  </app-form-field>
+  <app-form-field label="date" [required]="true" [control]="form.controls.date" [isInLine]="isInLine">
+    <app-date formControlName="date" placeholder="Seleccione una fecha"></app-date>
+
+  </app-form-field>
+  <app-form-field label="Date Range" [required]="true" [control]="form.controls.dateRange" [isInLine]="isInLine">
+    <app-date-range formControlName="dateRange" ></app-date-range>
+
+  </app-form-field>
+
 </form>
