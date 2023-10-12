@@ -6,10 +6,14 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+
+import{NotificationModule} from './services'
+
 import { AppComponent } from './app.component';
 import { environment } from '@src/environments/environment';
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { NotificationModule } from './services/notification/notification.module';
 import {
   MatNativeDateModule,
   MatDateFormats,
@@ -39,7 +43,8 @@ const APP_DATE_FORMATS: MatDateFormats = {
     AngularFireAuthModule,
     AngularFireStorageModule,
     BrowserAnimationsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    NotificationModule.forRoot()
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },

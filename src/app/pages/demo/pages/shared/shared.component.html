@@ -1,15 +1,37 @@
+<h2>Actions</h2>
+<app-button (click)="onToggleSpinner()">Toggle Spinner</app-button>
+<app-button (click)="onError()">Error</app-button>
+<app-button (click)="onSuccess()">Success</app-button>
+<br/><br/><br/>
+
 <h2>Formularios de Angular</h2>
 
+<div class="wrapper">
+<app-spinner *ngIf="showSpinner"></app-spinner>
+
+
 <form [formGroup]="form" novalidate autocomplete="off"  (ngSubmit)="onSubmit()">
+
+
+
+  <app-button type="submit">Submit</app-button>
   <app-button (click)="organizarElemento()">Organizar</app-button>
   <app-button (click)="onPatchValue()">Agregar Texto</app-button>
+  <app-button (click)="onToggleDisabled()">Disabled</app-button>
   <br/><br/>
   <app-form-field label="Input Jonathan"  [required]="true"  [control]="form.controls.input" [isInLine]="isInLine" [patternError]="regexErrors.number">
     <app-input formControlName="input"></app-input>
   </app-form-field>
 
+
+
   <app-form-field label="password" [required]="true" [control]="form.controls.password" [isInLine]="isInLine">
     <app-password formControlName="password"></app-password>
+
+  </app-form-field>
+
+  <app-form-field label="Autocomplete" [required]="true" [control]="form.controls.autocomplete" [isInLine]="isInLine">
+    <app-autocomplete formControlName="autocomplete" [items]="items"></app-autocomplete>
 
   </app-form-field>
 
@@ -37,3 +59,5 @@
   </app-form-field>
 
 </form>
+
+</div>
